@@ -1,6 +1,6 @@
 FROM imatic/docker-node-dev:8
 
-ENV JOKER_VERSION="0.10.0"
+ENV JOKER_VERSION="0.10.0" CLJ_VERSION="1.9.0.394"
 
 RUN apt-get update && \
     apt-get install -y unzip && \
@@ -8,6 +8,11 @@ RUN apt-get update && \
     curl --output /usr/local/bin/lein https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein && \
     chmod +x /usr/local/bin/lein && \
     lein && \
+    # clj
+    curl -O https://download.clojure.org/install/linux-install-${CLJ_VERSION}.sh && \
+    chmod +x linux-install-${CLJ_VERSION}.sh && \
+    ./linux-install-${CLJ_VERSION}.sh && \
+    rm ./linux-install-${CLJ_VERSION}.sh && \
     # joker
     wget -O /opt/joker.zip https://github.com/candid82/joker/releases/download/v${JOKER_VERSION}/joker-${JOKER_VERSION}-linux-amd64.zip && \
     mkdir -p /opt/joker && \
