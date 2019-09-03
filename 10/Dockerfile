@@ -1,6 +1,6 @@
 FROM imatic/docker-node-dev:10
 
-ENV JOKER_VERSION="0.12.7" CLJ_VERSION="1.10.0.469"
+ENV JOKER_VERSION="0.12.7" CLJ_VERSION="1.10.0.442"
 
 RUN apt-get update && \
     apt-get install -y unzip && \
