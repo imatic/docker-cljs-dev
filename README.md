@@ -2,3 +2,6 @@
 
 # ClojureScript
 
+Image with ClojureScript and it's tooling (tests etc.)
+
+- [Docker hub](https://hub.docker.com/r/imatic/docker-cljs-dev)
